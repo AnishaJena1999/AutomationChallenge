@@ -53,7 +53,7 @@ public class TC_01 {
 		searchButton.click();
 		System.out.println("Product show Succesfully");
 		driver.findElement(By.xpath(
-				"//*[text()='SanDisk Ultra Dual Drive Luxe Type C, Gold, 256GB, Up to 400MB/s Transfer Speed, USB 3.2 Gen 1, 5 Y Warranty']"))
+				"//*[text()=' HP x796w 128GB USB 3.2 Flash Drive']"))
 				.click();
 		Thread.sleep(1000);
 		Set<String> s = driver.getWindowHandles();
