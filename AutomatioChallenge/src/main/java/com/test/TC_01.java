@@ -55,6 +55,7 @@ public class TC_01 {
 		driver.findElement(By.xpath(
 				"//*[text()='SanDisk Ultra Dual Drive Luxe Type C, Gold, 256GB, Up to 400MB/s Transfer Speed, USB 3.2 Gen 1, 5 Y Warranty']"))
 				.click();
+		Thread.sleep(1000);
 		Set<String> s = driver.getWindowHandles();
 		List<String> ar = new ArrayList(s);
 		driver.switchTo().window((String) ar.get(1));
