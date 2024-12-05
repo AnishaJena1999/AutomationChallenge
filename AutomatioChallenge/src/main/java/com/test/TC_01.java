@@ -100,5 +100,13 @@ public class TC_01 {
 		
 		driver.findElement(By.id("c-action-submit-btn-announce")).click();
 
+		//other payment details
+		driver.findElement(By.linkText("Other UPI Apps")).click();
+		driver.findElement(By.name("__sif_encryptedVPA_collect")).sendKeys("anishajena-2@oksbi");
+		driver.findElement(By.xpath("//span[@id='pp-ll9nIW-270']")).click();
+		driver.findElement(By.name("ppw-widgetEvent:AddCreditCardEvent")).click();
+		driver.findElement(By.name("placeYourOrder1")).click();
+		
+
 	}
 }
