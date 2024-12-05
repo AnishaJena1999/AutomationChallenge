@@ -53,20 +53,24 @@ public class TC_01 {
 		searchButton.click();
 		System.out.println("Product show Succesfully");
 		driver.findElement(By.xpath(
-				"//*[text()=' HP x796w 128GB USB 3.2 Flash Drive']"))
+				"//*[text()='SanDisk Cruzer Blade 64GB USB 2.0 Flash Drive']"))
 				.click();
-		Thread.sleep(1000);
+		
 		Set<String> s = driver.getWindowHandles();
 		List<String> ar = new ArrayList(s);
 		driver.switchTo().window((String) ar.get(1));
 		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//*[@id='attach-close_sideSheet-link']")).click();
+		//hread.sleep(1000);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scroll(0, 300)");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='add-to-cart-buuton']")).click();
+		driver.findElement(By.xpath("//*[@id='add-to-cart-button']")).click();
 		System.out.println("added");
-		driver.findElement(By.name("proceedToRetailCheckout")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@id='attach-sidesheet-checkout-button']")).click();
+		//driver.findElement(By.name("proceedToRetailCheckout")).click();
 		driver.findElement(By.id("addressChangeLinkId")).click();
 		Thread.sleep(1000);
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
@@ -74,15 +78,17 @@ public class TC_01 {
 		driver.findElement(By.id("add-new-address-popover-link")).click();
 		// WebDriverWait wait = new WebDriverWait(driver, 10);
 		// wait.until(ExpectedConditions.presenceOfElementLocated(By.id("address-ui-widgets-enterAddressFullName")));
-		driver.findElement(By.id("address-ui-widgets-enterAddressFullName")).sendKeys("XYZZ");
+		driver.findElement(By.id("address-ui-widgets-enterAddressFullName")).sendKeys("groundfloror");
 		driver.findElement(By.id("address-ui-widgets-enterAddressPhoneNumber")).sendKeys("7665544900");
 		driver.findElement(By.id("address-ui-widgets-enterAddressPostalCode")).sendKeys("560099");
-		driver.findElement(By.id("address-ui-widgets-enterAddressLine1")).sendKeys("Karatali");
+		driver.findElement(By.id("address-ui-widgets-enterAddressLine1")).sendKeys("Bomasandra_area ");
 		driver.findElement(By.id("address-ui-widgets-landmark")).sendKeys("side of temple");
-		driver.findElement(By.id("address-ui-widgets-enterAddressCity")).sendKeys("banglore");
+		driver.findElement(By.id("address-ui-widgets-enterAddressCity")).sendKeys("Bangluru");
 		driver.findElement(By.id("address-ui-widgets-form-submit-button")).click();
+		Thread.sleep(2000);
 
 		// Payment gateway
+		driver.findElement(By.id("payChangeButtonId")).click();
 		driver.findElement(By.linkText("Enter card details")).click();
 		driver.findElement(By.name("addCreditCardNumber")).sendKeys("411111111111561");
 		driver.findElement(By.name("ppw-accountHolderName")).sendKeys("Anisha");
@@ -99,7 +105,7 @@ public class TC_01 {
 		OTPField.sendKeys("5344956");
 		
 		driver.findElement(By.id("c-action-submit-btn-announce")).click();
-
+		
 		//other payment details
 		driver.findElement(By.linkText("Other UPI Apps")).click();
 		driver.findElement(By.name("__sif_encryptedVPA_collect")).sendKeys("anishajena-2@oksbi");
@@ -107,6 +113,9 @@ public class TC_01 {
 		driver.findElement(By.name("ppw-widgetEvent:AddCreditCardEvent")).click();
 		driver.findElement(By.name("placeYourOrder1")).click();
 		
+
+	}
+}
 
 	}
 }
