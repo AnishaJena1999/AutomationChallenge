@@ -59,8 +59,6 @@ public class TC_01 {
 		List<String> ar = new ArrayList(s);
 		driver.switchTo().window((String) ar.get(1));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='attach-close_sideSheet-link']")).click();
-		Thread.sleep(1000);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scroll(0, 300)");
